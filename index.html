@@ -65,10 +65,12 @@
       background-color: #002f5c;
     }
     img.logo {
-      width: 50%;
-      border-radius: 30px;
-      margin-top: 10px;
-    }
+  width: 100%;           /* full width */
+  aspect-ratio: 4 / 1;   /* width:height = 4:1 means height is 25% of width */
+  border-radius: 30px;
+  margin-top: 10px;
+  object-fit: cover;     /* ensures the image fills the area nicely */
+}
   </style>
 </head>
 <body>
