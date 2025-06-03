@@ -2,173 +2,240 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BLATA ብላታ ሕትመት Printing Press</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLATA Printing Press</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    /* Basic styling for demo */
     body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0; background: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f9f9f9;
       color: #333;
-    }
-    header {
-      background: #004080; color: white; padding: 20px; text-align: center;
-    }
-    nav {
-      background: #0066cc; padding: 10px;
-      display: flex; justify-content: center; gap: 20px;
-    }
-    nav button {
-      background: white; border: none; padding: 10px 20px;
-      cursor: pointer; font-weight: bold; border-radius: 5px;
-    }
-    nav button:hover {
-      background: #ddd;
-    }
-    section {
-      max-width: 1000px; margin: 20px auto; padding: 10px;
-      background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #004080;
-    }
-    .services-list {
-      display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
-    }
-    .service-item {
-      flex: 1 1 250px; background: #e6f0ff; padding: 15px; border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1); text-align: center;
-    }
-    .service-item img {
-      max-width: 100%; height: 150px; object-fit: contain; border-radius: 5px;
-    }
-    .service-item button {
-      margin-top: 10px; padding: 8px 15px; border: none;
-      background: #004080; color: white; border-radius: 5px; cursor: pointer;
-    }
-    .service-item button:hover {
-      background: #003366;
-    }
-    .gallery {
-      display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;
-    }
-    .gallery img {
-      width: 150px; height: 100px; object-fit: cover; border-radius: 5px;
-      cursor: pointer; border: 2px solid transparent;
-    }
-    .gallery img:hover {
-      border-color: #004080;
-    }
-    footer {
-      background: #004080; color: white; text-align: center; padding: 15px;
-      margin-top: 30px;
+      transition: background 0.3s, color 0.3s;
     }
 
-    /* Modal style */
-    .modal {
-      display: none; 
-      position: fixed; 
-      z-index: 9999; 
-      left: 0; top: 0; width: 100%; height: 100%; 
-      background-color: rgba(0,0,0,0.7); 
-      justify-content: center; 
-      align-items: center;
-    }
-    .modal-content {
-      background: white; padding: 20px; border-radius: 10px;
-      max-width: 600px; width: 90%;
+    header, footer {
+      background: linear-gradient(to right, #004080, #0074d9);
+      color: white;
+      text-align: center;
+      padding: 1em 0;
       position: relative;
     }
-    .modal-content img {
-      max-width: 100%; height: auto; border-radius: 5px;
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #004080;
+      z-index: 999;
     }
-    .close-btn {
-      position: absolute; top: 10px; right: 15px;
-      font-size: 20px; font-weight: bold;
-      cursor: pointer; color: #333;
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2em;
+    }
+
+    .services, .contact, .order-form {
+      background: white;
+      margin: 1em auto;
+      padding: 1.5em;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .service-card {
+      padding: 1em;
+      background: #f0f8ff;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    label, input, select, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    input, select, textarea {
+      padding: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 0.75em 1.5em;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #002f5c;
+    }
+
+    img.logo {
+      width: 100%;
+      height: auto;
+      max-height: 25vh;
+      border-radius: 30px;
+      margin-top: 10px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .developer-profile {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-align: center;
+      color: black;
+    }
+
+    .developer-img {
+      width: 35px;
+      height: 35px;
+      border-radius: 45%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    .developer-name {
+      font-size: 0.75em;
+      margin-top: 5px;
+    }
+
+    .dark {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .dark .services, .dark .order-form, .dark .contact {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>BLATA ብላታ ሕትመት Printing Press</h1>
-  <p>Your trusted printing partner in Mekelle - Zone 17</p>
-  <p>Contact: <a href="mailto:amanuelh@gmail.com" style="color: #aaddff;">amanuelh@gmail.com</a></p>
-</header>
-
-<nav>
-  <button onclick="showSection('home')">Home</button>
-  <button onclick="showSection('services')">Services</button>
-  <button onclick="showSection('gallery')">Gallery</button>
-  <button onclick="showSection('contact')">Contact</button>
-</nav>
-
-<section id="home" class="content-section">
-  <h2>Welcome to BLATA Printing Press</h2>
-  <p>
-    At BLATA ብላታ ሕትመት, we deliver high-quality printing solutions that meet all your business needs. 
-    Whether you need banners, stickers, receipts, cards, or office paper tools, our experienced team ensures precision and excellence.
-  </p>
-  <p>
-    We combine modern technology with traditional craftsmanship to bring your ideas to life. Located in Mekelle City Zone 17, BLATA Printing Press is your one-stop shop for all printing services.
-  </p>
-  <p>
-    Explore our services, check out our work in the gallery, or get in touch with us to place your order today!
-  </p>
-</section>
-
-<section id="services" class="content-section" style="display:none;">
-  <h2>Our Services</h2>
-  <div class="services-list">
-    <div class="service-item">
-      <img src="https://via.placeholder.com/300x150?text=Banners" alt="Banners" />
-      <h3>Banners</h3>
-      <p>Custom designed banners for all occasions - durable and vibrant.</p>
-      <button onclick="alert('Contact us for banner pricing and options!')">Learn More</button>
+  <header>
+    <div class="developer-profile">
+      <img src="your-image.jpg" alt="Developer Image" class="developer-img" />
+      <p class="developer-name">
+        Developed by <a href="#" target="_blank" style="color: blue; text-decoration: underline;">Teklush@MIT</a>
+      </p>
     </div>
-    <div class="service-item">
-      <img src="https://via.placeholder.com/300x150?text=Stickers" alt="Stickers" />
-      <h3>Stickers</h3>
-      <p>High-quality stickers perfect for branding and promotions.</p>
-      <button onclick="alert('Contact us for sticker pricing and options!')">Learn More</button>
-    </div>
-    <div class="service-item">
-      <img src="https://via.placeholder.com/300x150?text=Receipts" alt="Receipts" />
-      <h3>Receipts</h3>
-      <p>Professional receipt printing with custom logos and details.</p>
-      <button onclick="alert('Contact us for receipt printing details!')">Learn More</button>
-    </div>
-    <div class="service-item">
-      <img src="https://via.placeholder.com/300x150?text=Cards" alt="Cards" />
-      <h3>Cards</h3>
-      <p>Business and greeting cards with high-quality finish.</p>
-      <button onclick="alert('Contact us for card printing options!')">Learn More</button>
-    </div>
-    <div class="service-item">
-      <img src="https://via.placeholder.com/300x150?text=Office+Paper+Tools" alt="Office Paper Tools" />
-      <h3>Office Paper Tools</h3>
-      <p>Wide range of office papers and tools for your business needs.</p>
-      <button onclick="alert('Contact us for office paper tools details!')">Learn More</button>
-    </div>
-  </div>
-</section>
+    <h1>BLATA Printing Press</h1>
+    <button onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#order">Order Online</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="gallery" class="content-section" style="display:none;">
-  <h2>Gallery</h2>
-  <p>Click on the images below to view larger versions.</p>
-  <div class="gallery">
-    <img src="https://via.placeholder.com/300x200?text=Banner+1" alt="Banner 1" onclick="openModal(this)" />
-    <img src="https://via.placeholder.com/300x200?text=Sticker+1" alt="Sticker 1" onclick="openModal(this)" />
-    <img src="https://via.placeholder.com/300x200?text=Receipt+1" alt="Receipt 1" onclick="openModal(this)" />
-    <img src="https://via.placeholder.com/300x200?text=Card+1" alt="Card 1" onclick="openModal(this)" />
-    <img src="https://via.placeholder.com/300x200?text=Office+Paper+1" alt="Office Paper 1" onclick="openModal(this)" />
-  </div>
-</section>
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">Banner Printing</div>
+      <div class="service-card">Business Cards</div>
+      <div class="service-card">Books</div>
+      <div class="service-card">Flyers</div>
+      <div class="service-card">Receipts</div>
+      <div class="service-card">Various Papers</div>
+      <div class="service-card">All Types of Cards</div>
+      <div class="service-card">Large Banners</div>
+    </div>
+  </section>
 
-<section id="contact" class="content-section" style="display:none;">
-  <h2>Contact Us</h2>
-  <p>We are here to help you with your printing needs. Reach out anytime!</p>
-  <p>Email: <a href="mailto:amanuelh@gmail.com">amanuelh@gmail.com</a></p>
-  <p>Phone: +251 911 123 
+  <section class="order-form" id="order">
+    <h2>Place Your Order</h2>
+    <form action="https://formspree.io/f/xnnvaeqb" method="POST" enctype="multipart/form-data">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="09XXXXXXXX" required />
+
+      <label for="service">Select Service</label>
+      <select id="service" name="service" required>
+        <option value="">-- Choose a Service --</option>
+        <option value="business-cards">Business Cards</option>
+        <option value="banners">Banners</option>
+        <option value="flyers">Flyers</option>
+        <option value="books">Books</option>
+        <option value="receipts">Receipts</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="details">Order Details</label>
+      <textarea id="details" name="details" rows="5" placeholder="Write order details here..." required></textarea>
+
+      <label for="file">Upload File (if needed)</label>
+      <input type="file" id="file" name="file" />
+
+      <label for="address">Delivery Address</label>
+      <input type="text" id="address" name="address" required />
+
+      <label for="wait-days">Maximum Days You Can Wait</label>
+      <input type="number" id="wait-days" name="wait-days" min="1" max="30" placeholder="e.g. 3" required />
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> Mekele City, Zone 17, Block 4, in front of the Tigray Education Bureau</p>
+    <p><strong>Manager:</strong> +251914106121</p>
+    <p><strong>Business Cards Orders - Aberae:</strong> 266523263260</p>
+    <p><strong>Banners - Kasae:</strong> 0322548755</p>
+    <p><strong>Flyers/Books/Receipts - [Staff Name]:</strong> [Phone Number]</p>
+    <iframe src="https://www.google.com/maps?q=Mekele&output=embed" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BLATA Printing Press. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>
