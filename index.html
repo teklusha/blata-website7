@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLATA Printing Press</title>
   <style>
     body {
@@ -18,7 +18,6 @@
       color: white;
       text-align: center;
       padding: 1em 0;
-      position: relative;
     }
 
     nav ul {
@@ -26,6 +25,7 @@
       justify-content: center;
       list-style: none;
       padding: 0;
+      margin: 0;
     }
 
     nav ul li {
@@ -87,7 +87,6 @@
       object-fit: contain;
     }
 
-
     footer {
       text-align: center;
       padding: 1em;
@@ -95,11 +94,8 @@
   </style>
 </head>
 <body>
-
   <header>
-    
     <h1>BLATA Printing Press</h1>
-
     <nav>
       <ul>
         <li><a href="#services">Services</a></li>
@@ -130,7 +126,7 @@
       <input type="text" id="name" name="name" required>
 
       <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="09XXXXXXXX" required>
+      <input type="tel" id="phone" name="phone" pattern="^09\d{8}$" placeholder="09XXXXXXXX" title="Use 09XXXXXXXX format" required>
 
       <label for="service">Select Service</label>
       <select id="service" name="service" required>
@@ -158,19 +154,17 @@
       <button type="submit">Submit Order</button>
     </form>
   </section>
-
   <section class="contact container" id="contact">
     <h2>Contact Us</h2>
     <p><strong>Address:</strong> Mekele City, Zone 17, Block 4, in front of the Tigray Education Bureau</p>
     <p><strong>Manager:</strong> 0912345432</p>
     <p><strong>Business Cards Orders - Aberae:</strong> 266523263260</p>
     <p><strong>Banners - Kasae:</strong> 0322548755</p>
-    <p><strong>Flyers/Books/Receipts - [Staff Name]:</strong> [Phone Number]</p>
+    <p><strong>Flyers/Books/Receipts - Biruk:</strong> 0911234567</p>
   </section>
 
   <footer>
     <p>&copy; 2025 BLATA Printing Press. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
