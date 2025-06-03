@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BLATA Printing Press</title>
   <style>
     body {
@@ -42,13 +42,17 @@
       padding: 2em;
     }
 
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
     .services, .contact, .order-form {
       background: white;
-      margin: 1em auto;
       padding: 1.5em;
-      max-width: 800px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 1em;
     }
 
     label, input, select, textarea {
@@ -76,54 +80,25 @@
       background-color: #002f5c;
     }
 
-    img.logo {
+    .logo {
       width: 100%;
-      height: auto;
-      max-height: 25vh;
-      border-radius: 30px;
-      margin-top: 10px;
+      max-height: 200px;
+      border-radius: 10px;
       object-fit: contain;
-      display: block;
     }
 
-    .developer-profile {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+
+    footer {
       text-align: center;
-      color: black;
-    }
-
-    .developer-img {
-      width: 35px;
-      height: 35px;
-      border-radius: 45%;
-      object-fit: cover;
-      border: 2px solid white;
-    }
-
-    .developer-name {
-      font-size: 0.75em;
-      margin-top: 5px;
+      padding: 1em;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="developer-profile">
-      <img src="image/my2.png"
-           alt="Developer Image" class="developer-img" />
-      <p class="developer-name">
-        Developed by <a href="https://www.facebook.com/your-profile-link" target="_blank" style="color: blue; text-decoration: underline;">Teklush@MIT</a>
-      </p>
-    </div>
-
-   
-
+    
     <h1>BLATA Printing Press</h1>
-
-    <!-- Cropped Decorative Image (middle 50%) -->
 
     <nav>
       <ul>
@@ -134,7 +109,7 @@
     </nav>
   </header>
 
-  <section class="services" id="services">
+  <section class="services container" id="services">
     <h2>Our Services</h2>
     <ul>
       <li>Banner Printing</li>
@@ -148,14 +123,14 @@
     </ul>
   </section>
 
-  <section class="order-form" id="order">
+  <section class="order-form container" id="order">
     <h2>Place Your Order</h2>
     <form action="https://formspree.io/f/xnnvaeqb" method="POST" enctype="multipart/form-data">
       <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
+      <input type="text" id="name" name="name" required>
 
       <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="09XXXXXXXX" required />
+      <input type="tel" id="phone" name="phone" placeholder="09XXXXXXXX" required>
 
       <label for="service">Select Service</label>
       <select id="service" name="service" required>
@@ -172,19 +147,19 @@
       <textarea id="details" name="details" rows="5" placeholder="Write order details here..." required></textarea>
 
       <label for="file">Upload File (if needed)</label>
-      <input type="file" id="file" name="file" />
+      <input type="file" id="file" name="file">
 
       <label for="address">Delivery Address</label>
-      <input type="text" id="address" name="address" required />
+      <input type="text" id="address" name="address" required>
 
       <label for="wait-days">Maximum Days You Can Wait</label>
-      <input type="number" id="wait-days" name="wait-days" min="1" max="30" placeholder="e.g. 3" required />
+      <input type="number" id="wait-days" name="wait-days" min="1" max="30" placeholder="e.g. 3" required>
 
       <button type="submit">Submit Order</button>
     </form>
   </section>
 
-  <section class="contact" id="contact">
+  <section class="contact container" id="contact">
     <h2>Contact Us</h2>
     <p><strong>Address:</strong> Mekele City, Zone 17, Block 4, in front of the Tigray Education Bureau</p>
     <p><strong>Manager:</strong> 0912345432</p>
